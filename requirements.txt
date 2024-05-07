@@ -1,0 +1,12 @@
+streamlit
+pandas
+numpy
+matplotlib.pyplot
+plotly.express
+collections
+datetime
+ipywidgets
+datacleaner
+joblib
+pickle
+
