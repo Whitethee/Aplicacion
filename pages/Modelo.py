@@ -58,7 +58,7 @@ def surveyMod():
             st.write((f"El resultado es {res}"))
 
         with c2:
-            st.image("verdecirc.jpg", use_column_width="auto", output_format="JPEG")
+            st.image("verdecirc.jpg", use_column_width="auto", output_format="PNG")
 
 
         
