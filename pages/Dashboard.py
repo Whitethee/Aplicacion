@@ -47,10 +47,18 @@ Este dashboard proporciona acceso inmediato a información crítica, facilitando
 
 
 # Crear el gráfico
-    fig = px.bar(data, x='Tipo.de.Intervención.Quirúrgica', y='Edad', color='Duración.de.la.intervención.quirúrgica',
-             title='Edad por Tipo de Intervención y Duración',
-             labels={'Edad': 'Edad en Años', 'Tipo.de.Intervención.Quirúrgica': 'Tipo de Intervención', 'Duración.de.la.intervención.quirúrgica': 'Duración de Intervención'})
-
+    fig = px.bar(
+    data, 
+    x='Tipo.de.Intervención.Quirúrgica', 
+    y='Edad', 
+    color='Duración.de.la.intervención.quirúrgica',
+    title='Edad por Tipo de Intervención y Duración',
+    labels={
+        'Edad': 'Edad en Años', 
+        'Tipo.de.Intervención.Quirúrgica': 'Tipo de Intervención', 
+        'Duración.de.la.intervención.quirúrgica': 'Duración de Intervención'
+    }
+)
 # Mostrar el gráfico en Streamlit
     st.plotly_chart(fig)
     
