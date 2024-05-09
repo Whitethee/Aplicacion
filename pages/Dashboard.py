@@ -17,7 +17,7 @@ from ipywidgets import interact, IntRangeSlider
 
 
 def dashboard():
-    data = pd.read_csv("data/data_APP.csv")
+    data = pd.read_csv("data_APP.csv")
     st.title('Monitor Médico')
     st.markdown("""
 # Bienvenido/a al dashboard de nuestra aplicación web
@@ -52,7 +52,7 @@ Este dashboard proporciona acceso inmediato a información crítica, facilitando
     st.plotly_chart(fig)
     
 
-    data = pd.read_excel('data/datos_APP1.xlsx', index_col=0)
+    data = pd.read_excel('datos_APP1.xlsx', index_col=0)
 
 # Convertir la columna de duración a tipo categórico con orden específico
     data['Duración.de.la.intervención.quirúrgica'] = pd.Categorical(
