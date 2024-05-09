@@ -7,7 +7,6 @@ datetime
 ipywidgets
 datacleaner
 joblib
-pickle
 
 
 
