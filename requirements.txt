@@ -11,6 +11,6 @@ networkx
 osmnx
 openpyxl
 scikit-learn==1.2.2
-
+markdown
 
 
