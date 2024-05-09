@@ -19,8 +19,17 @@ from ipywidgets import interact, IntRangeSlider
 def dashboard():
     data = pd.read_csv("data_APP.csv")
     st.title('Monitor Médico')
-    st.header('Dashboard')
-    st.subheader("Bienvenido/a al dashboard de nuestra aplicación web, diseñada para optimizar el manejo de cirugías bucodentales. Esta herramienta se organiza en tres secciones clave:1. *Intervenciones Quirúrgicas*: Detalles completos sobre los procedimientos realizados, equipos involucrados y resultados.2. *Pacientes*: Información detallada de cada paciente, incluyendo historial médico y diagnósticos.3. *Medicación*: Gestión de las medicaciones prescritas, dosificaciones y horarios de administración.Este dashboard proporciona acceso inmediato a información crítica, facilitando decisiones informadas y mejorando la calidad del cuidado al paciente.")
+    st.markdown("""
+# Bienvenido/a al dashboard de nuestra aplicación web
+
+Esta herramienta está diseñada para optimizar el manejo de cirugías bucodentales y se organiza en tres secciones clave:
+
+1. **Intervenciones Quirúrgicas**: Detalles completos sobre los procedimientos realizados, equipos involucrados y resultados.
+2. **Pacientes**: Información detallada de cada paciente, incluyendo historial médico y diagnósticos.
+3. **Medicación**: Gestión de las medicaciones prescritas, dosificaciones y horarios de administración.
+
+Este dashboard proporciona acceso inmediato a información crítica, facilitando decisiones informadas y mejorando la calidad del cuidado al paciente.
+""")
     st.write("____________________________________________________")
    
 
