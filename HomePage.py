@@ -8,9 +8,9 @@ st.set_page_config(
     page_title="Software de Predicción Quirúrgica",
     page_icon="👋"
 )
-st.title("Información")
+st.title("Software de Predicción Quirúrgica")
 f = f"""
-    <span style="font-weight:bold;">Developer Info and Project Utilities</span>
+    <span style="font-weight:bold;">Información</span>
     """
 
 st.write(f, unsafe_allow_html=True)
