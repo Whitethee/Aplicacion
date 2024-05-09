@@ -8,7 +8,7 @@ ipywidgets
 datacleaner
 joblib
 networkx
-
+osmnx
 
 
 
