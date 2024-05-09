@@ -6,7 +6,7 @@ plotly==5.0
 datetime
 ipywidgets
 datacleaner
-joblib
+joblib==1.2.2
 networkx
 osmnx
 
