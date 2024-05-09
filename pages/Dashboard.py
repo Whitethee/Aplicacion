@@ -38,7 +38,7 @@ Este dashboard proporciona acceso inmediato a información crítica, facilitando
 
 
      
-    data['Fecha.de.Nacimiento'] = pd.to_datetime(data['Fecha.de.Nacimiento'], errors='coerce')
+    data['Fecha.de.Nacimiento'] = pd.to_datetime(data['Fecha.de.Nacimiento'], dayfirst=True, errors='coerce')
 
 # Calcular la edad en años
     data['Edad'] = (pd.Timestamp.now() - data['Fecha.de.Nacimiento']).dt.days // 365
