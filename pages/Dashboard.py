@@ -43,6 +43,9 @@ Este dashboard proporciona acceso inmediato a información crítica, facilitando
 # Calcular la edad en años
     data['Edad'] = (pd.Timestamp.now() - data['Fecha.de.Nacimiento']).dt.days // 365
 
+    data.dropna(subset=['Tipo.de.Intervención.Quirúrgica', 'Edad', 'Duración.de.la.intervención.quirúrgica'], inplace=True)
+
+
 # Crear el gráfico
     fig = px.bar(data, x='Tipo.de.Intervención.Quirúrgica', y='Edad', color='Duración.de.la.intervención.quirúrgica',
              title='Edad por Tipo de Intervención y Duración',
