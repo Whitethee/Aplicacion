@@ -2,12 +2,11 @@ streamlit
 pandas
 numpy
 matplotlib
-plotly.express
-collections
+plotly
 datetime
 ipywidgets
 datacleaner
 joblib
 pickle
-collections
+
 
