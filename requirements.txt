@@ -9,4 +9,5 @@ ipywidgets
 datacleaner
 joblib
 pickle
+collections
 
