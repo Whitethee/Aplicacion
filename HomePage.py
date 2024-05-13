@@ -35,7 +35,7 @@ with c2:
                 nuestra aplicación web surge como una solución innovadora dirigida a optimizar y transformar la gestión de clínicas dentales.
                 Nuestro proyecto se articula en dos componentes principales que trabajan de manera sinérgica para ofrecer resultados excepcionales:
 
-Dashboard de **Gestión Quirúrgica**: Esta herramienta integral proporciona una visión completa y actualizada de las intervenciones quirúrgicas.
+**Dashboard de Gestión Quirúrgica**: Esta herramienta integral proporciona una visión completa y actualizada de las intervenciones quirúrgicas.
                A través de interfaces intuitivas, ofrecemos acceso a datos críticos como perfiles de pacientes, detalles de medicación e historiales de procedimientos, todo en tiempo real. 
                Este enfoque no solo mejora la eficiencia operativa, sino que también eleva el nivel de cuidado al paciente, permitiendo a los profesionales tomar decisiones informadas rápidamente.
 **Predicción de Duración de Operaciones**: Gracias a nuestro avanzado sistema de predicción basado en un cuestionario de diez preguntas, nuestra aplicación estima la duración de las cirugías futuras.
