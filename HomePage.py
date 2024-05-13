@@ -38,6 +38,7 @@ with c2:
 **Dashboard de Gestión Quirúrgica**: Esta herramienta integral proporciona una visión completa y actualizada de las intervenciones quirúrgicas.
                A través de interfaces intuitivas, ofrecemos acceso a datos críticos como perfiles de pacientes, detalles de medicación e historiales de procedimientos, todo en tiempo real. 
                Este enfoque no solo mejora la eficiencia operativa, sino que también eleva el nivel de cuidado al paciente, permitiendo a los profesionales tomar decisiones informadas rápidamente.
+                
 **Predicción de Duración de Operaciones**: Gracias a nuestro avanzado sistema de predicción basado en un cuestionario de diez preguntas, nuestra aplicación estima la duración de las cirugías futuras.
                 Esta funcionalidad es clave para mejorar la planificación y gestión del tiempo dentro de las clínicas, permitiendo una asignación más eficiente de recursos y reduciendo las esperas innecesarias para los pacientes.
 Nuestra aplicación está diseñada no solo para responder a las necesidades actuales de las clínicas dentales sino también para adaptarse a los cambios y desafíos futuros del sector de la salud dental.
