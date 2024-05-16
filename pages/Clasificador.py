@@ -85,8 +85,8 @@ def clasificador():
         st.write(data)
         response = model.predict(data)
         #st.write(sur_res)
-        st.session_state.user_input = ""
         st.write(f"la operación tendra una dificultad de {response}")
+        st.session_state.user_input = ""
 
 
 
