@@ -124,8 +124,10 @@ def clasificador():
         st.write(res)
         
         response = model.predict(res)
-        st.write(sur_res)
-        st.write(f"la operación tendra una dificultad de {response}")
+        #st.write(sur_res)
+        st.markdown(f"""
+                    La operación tendra una dificultad  **{response}**
+                    """)
         
 
 
