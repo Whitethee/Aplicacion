@@ -61,7 +61,7 @@ def surveyMod():
             "Implante 1 defecto tipo 1 infraóseo": de_oseo,
             "Alcohol": alcohol,
             "Medicacion actual": medactual,
-            "Posicion del implante": pos_imp
+            "Posicion del implante": int(pos_imp)
         }
 
         st.session_state.submissions.append(survey_results)
