@@ -13,6 +13,37 @@ def clasificador():
 
     model = load('data/modelo_random_forest.joblib')
 
+    mappings = {
+    'Género': {'Mujer': 0, 'Hombre': 1},
+    'Alcohol': {'No consumo': 0, 'Consumo moderado': 1, 'Consumo elevado': 2},
+    'Hipertensión Arterial': {'no': 0, 'Hipertensión Arterial': 1},
+    'Hipercolesterolemia': {'no': 0, 'Hipercolesterolemia': 1},
+    'Fumador/a': {'no': 0, 'Fumador/a': 1},
+    'Diabetes II': {'no': 0, 'Diabetes II': 1},
+    'Diabetes I': {'no': 0, 'Diabetes I': 1},
+    'Osteoporosis': {'no': 0, 'Osteoporosis': 1},
+    'Quimioterapia': {'no': 0, 'Quimioterapia': 1},
+    'Tipo de Intervención Quirúrgica': {'Cirugía Dentoalveolar': 0, 
+                                        'Cirugía Peri-implantaria': 1,
+                                       'Implantología Bucal':2},
+    'Tipo de cirugía': {'no': 0, 
+                        'Cirugía resectiva': 1, 
+                        'Cirugía combinada (regenerativa + implantoplastia)': 2,
+                       'Cirugía de acceso':3,
+                       'Cirugía regenerativa':4},
+    'Duración de la intervención quirúrgica': {'0-5 minutos': 0,
+                                               '5-10 minutos': 1, 
+                                               '10-20 minutos': 2,
+                                               '20-40 minutos': 3, 
+                                               '40-60 minutos': 4,
+                                               '60-90 minutos': 5,
+                                               '90-120 minutos': 6,
+                                               '120-180 minutos': 7,
+                                              '>180 minutos': 8 },
+    'Clasificación Dificultad': {'Muy Fácil': 0, 'Fácil': 1, 'Moderada': 2, 'Difícil': 3}
+    }
+
+
     
 
 
@@ -80,7 +111,15 @@ def clasificador():
         }
 
         st.session_state.submissions.append(sur_res)
+
+        # Convertimos los datos de la encuesta en DataFrame
+        
         res = pd.DataFrame([sur_res])
+        res.replace(mappings, inplace=True)
+
+        res.replace('na', pd.NA, inplace=True)
+        res.replace('no', pd.NA, inplace=True)
+        res.dropna(inplace=True) 
         st.write(res)
         data = autoclean(res)
         #st.write(data)
