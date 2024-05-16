@@ -111,6 +111,7 @@ def clasificador():
         }
 
         st.session_state.submissions.append(sur_res)
+        st.session_state.user_input = ""
 
         # Convertimos los datos de la encuesta en DataFrame
 
@@ -125,7 +126,7 @@ def clasificador():
         response = model.predict(res)
         st.write(sur_res)
         st.write(f"la operación tendra una dificultad de {response}")
-        st.session_state.user_input = ""
+        
 
 
 
