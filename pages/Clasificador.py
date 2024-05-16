@@ -35,31 +35,31 @@ def clasificador():
 
         if hipart:
             hipart = "Hipertensión Arterial"
-        else: hipart = NaN
+        else: hipart = None
 
         if hipcol:
             hipcol = "Hipercolesterolemia"
-        else: hipcol = NaN
+        else: hipcol = None
 
         if fumador:
             fumador = "Fumador/a"
-        else: fumador = NaN
+        else: fumador = None
 
         if diab2:
             diab2 = "Diabetes II"
-        else: diab2 = NaN
+        else: diab2 = None
 
         if diab1:
             diab1 = "Diabetes I"
-        else: diab1 = NaN
+        else: diab1 = None
 
         if osteo:
             osteo = "Osteoporosis"
-        else: osteo = NaN
+        else: osteo = None
 
         if quimio:
             quimio = "Quimioterapia"
-        else: quimio = NaN
+        else: quimio = None
     
 
     if sub:
