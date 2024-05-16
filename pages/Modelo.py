@@ -70,7 +70,7 @@ def surveyMod():
         data = autoclean(results)
         res = modelo.predict(data)
         res = res
-        st.session_state.user_input = ""
+       
 
 
         c1, c2 = st.columns(2)
