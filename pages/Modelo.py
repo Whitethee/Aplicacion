@@ -27,7 +27,8 @@ def surveyMod():
 
     'Alcohol': {'No consumo': 0, 'Consumo moderado':1, 'Consumo elevado':2},
 
-    'Medicacion actual': {'No': 0, 'Sí':1}
+    'Medicacion actual': {'No': 0, 'Sí':1},
+
     }
 
 
@@ -71,16 +72,6 @@ def surveyMod():
         results = pd.DataFrame([survey_results])
         st.write(results)
         data = results.replace(mappings, inplace=True)
-
-        data = data.fillna(0)
-
-# Convertir todas las columnas a enteros
-        data = data.astype(float)
-
-# Verificar los nuevos tipos de datos
-        print(data.dtypes)
-
- 
         st.write(data)
         res = modelo.predict(data)
         res = res
