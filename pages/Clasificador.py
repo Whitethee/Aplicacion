@@ -149,6 +149,8 @@ def clasificador():
             if resp == "Muy Difícil":
                 st.image('data/very_diff.jpg', use_column_width="auto", output_format="JPEG")
 
+        st.session_state.user_input = ""
+
 
 
 clasificador()
