@@ -18,7 +18,7 @@ def clasificador():
 
     with st.form("Clasificador-Survey"):
         genero = st.selectbox("Género", ("Hombre", "Mujer"))
-        edad = st.text_input("Edqd")
+        edad = st.number_input("Edqd")
         alc = st.selectbox("Alcohol", ("No consumo", "Consumo moderado", "Consumo elevado"))
         hipart = st.checkbox("Hipertensión Arterial")
         hipcol = st.checkbox("Hipercolesterolemia")
@@ -82,10 +82,10 @@ def clasificador():
         st.session_state.submissions.append(sur_res)
         res = pd.DataFrame([sur_res])
         data = autoclean(res)
-        response = model.predict(data)
+        #response = model.predict(data)
         st.write(sur_res)
         st.session_state.user_input = ""
-        st.write(f"la operación tendra una dificultad de {response}")
+        #st.write(f"la operación tendra una dificultad de {response}")
 
 
 
