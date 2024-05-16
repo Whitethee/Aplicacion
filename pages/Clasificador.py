@@ -59,7 +59,7 @@ def clasificador():
         osteo = st.checkbox("Osteoporosis")
         quimio = st.checkbox("Quimioterapia")
         intquir = st.selectbox("Tipo de Intervención Quirúrgica", ("Cirugía Dentoalveolar", "Cirugía Peri-implantaria", "Implantología Bucal"))
-        tipocir = st.selectbox("Tipo de cirugía", ("Cirugía combinada (regenerativa + implantoplastia)", "Cirugía de acceso", "Cirugiá resectiva", "Cirugía regenerativa"))
+        tipocir = st.selectbox("Tipo de cirugía", ("Cirugía combinada (regenerativa + implantoplastia)", "Cirugía de acceso", "Cirugía resectiva", "Cirugía regenerativa"))
         duracion = st.selectbox("Duración de la intervención quirúrgica", ("0-5 minutos", "10-20 minutos", "20-40 minutos", "40-60 minutos", "60-90 minutos", "90-120 minutos", "120-180 minutos"))
 
         sub = st.form_submit_button("Predecir", use_container_width=False)
