@@ -64,11 +64,22 @@ def surveyMod():
             "Posicion del implante": int(pos_imp)
         }
 
+        
+
         st.session_state.submissions.append(survey_results)
         #results = pd.DataFrame(survey_results)
         results = pd.DataFrame([survey_results])
+
+        data = results.fillna(0)
+
+# Convertir todas las columnas a enteros
+        data = data.astype(float)
+
+# Verificar los nuevos tipos de datos
+        print(data.dtypes)
+        
         st.write(results)
-        data = results.replace(mappings, inplace=True)
+        data = data.replace(mappings, inplace=True)
         st.write(data)
         res = modelo.predict(data)
         res = res
