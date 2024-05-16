@@ -9,6 +9,7 @@ from joblib import load
 def clasificador():
 
     st.title("Clasificador de Intervenciones")
+    st.write("__________________________________________________")
 
     if 'submissions' not in st.session_state:
         st.session_state.submissions = []
