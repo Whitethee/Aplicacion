@@ -81,10 +81,11 @@ def clasificador():
 
         st.session_state.submissions.append(sur_res)
         res = pd.DataFrame([sur_res])
-        #data = autoclean(res)
+        data = autoclean(res)
         #st.write(data)
         st.write(res)
-        response = model.predict(res)
+        st.write(data)
+        #response = model.predict(res)
         #st.write(sur_res)
         st.write(f"la operación tendra una dificultad de {response}")
         st.session_state.user_input = ""
