@@ -65,7 +65,6 @@ def clasificador():
     if sub:
         sur_res = {
             "Género": genero,
-            "Edad": edad,
             "Alcohol": alc,
             "Hipertensión Arterial": hipart,
             "Hipercolesterolemia": hipcol,
@@ -76,7 +75,8 @@ def clasificador():
             "Quimioterapia": quimio,
             "Tipo de Intervención Quirúrgica": intquir,
             "Tipo de cirugía": tipocir,
-            "Duración de la intervención quirúrgica": duracion
+            "Duración de la intervención quirúrgica": duracion,
+            "Edad": int(edad),
         }
 
         st.session_state.submissions.append(sur_res)
