@@ -67,7 +67,7 @@ def surveyMod():
         st.session_state.submissions.append(survey_results)
         #results = pd.DataFrame(survey_results)
         results = pd.DataFrame([survey_results])
-        data = autoclean(results)
+        data = results.replace(mappings, inplace=True)
         res = modelo.predict(data)
         res = res
        
