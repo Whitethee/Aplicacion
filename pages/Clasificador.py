@@ -18,6 +18,7 @@ def clasificador():
 
     with st.form("Clasificador-Survey"):
         genero = st.selectbox("Género", ("Hombre", "Mujer"))
+        edad = st.text_input("Edqd")
         alc = st.selectbox("Alcohol", ("No consumo", "Consumo moderado", "Consumo elevado"))
         hipart = st.checkbox("Hipertensión Arterial")
         hipcol = st.checkbox("Hipercolesterolemia")
@@ -26,7 +27,7 @@ def clasificador():
         diab1 = st.checkbox("Diabetes I")
         osteo = st.checkbox("Osteoporosis")
         quimio = st.checkbox("Quimioterapia")
-        intquir = st.selectbox("Tipo de Intervencion Quirurgica", ("Cirugía Dentoalveolar", "Cirugía Peri-implantaria", "Implantología Bucal"))
+        intquir = st.selectbox("Tipo de Intervención Quirúrgica", ("Cirugía Dentoalveolar", "Cirugía Peri-implantaria", "Implantología Bucal"))
         tipocir = st.selectbox("Tipo de cirugía", ("Cirugía combinada (regenerativa + implantoplastia)", "Cirugía de acceso", "Cirugiá resectiva", "Cirugía regenerativa"))
         duracion = st.selectbox("Duración de la intervención quirúrgica", ("0-5 minutos", "10-20 minutos", "20-40 minutos", "40-60 minutos", "60-90 minutos", "90-120 minutos", "120-180 minutos"))
 
@@ -64,6 +65,7 @@ def clasificador():
     if sub:
         sur_res = {
             "Género": genero,
+            "Edad": edad,
             "Alcohol": alc,
             "Hipertensión Arterial": hipart,
             "Hipercolesterolemia": hipcol,
@@ -72,8 +74,8 @@ def clasificador():
             "Diabetes I": diab1,
             "Osteoporosis": osteo,
             "Quimioterapia": quimio,
-            "Tipo de Intervencion Quirurgica": intquir,
-            "Tipo de Cirugía": tipocir,
+            "Tipo de Intervención Quirúrgica": intquir,
+            "Tipo de cirugía": tipocir,
             "Duración de la intervención quirúrgica": duracion
         }
 
