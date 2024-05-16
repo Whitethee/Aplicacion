@@ -10,6 +10,27 @@ def surveyMod():
         st.session_state.submissions = []
 
 
+    mappings = {
+    'Tipo Intervencion': {'Cirugía Dentoalveolar': 0, 'Cirugía Peri-implantaria': 1, 'Implantología Bucal':2},
+
+    'Tipo de Cirugia': {'Cirugía combinada (regenerativa + implantoplastia)': 0, 'Cirugía resectiva': 1, 'Cirugía de acceso': 2, 'Cirugía regenerativa': 3},
+
+    'Material de regeneracion': {'Xenoinjerto (Bio-Oss) + Membrana de colágeno reabsorbible (Bio-Gide)': 1,'0': 0},
+
+    'Numero de implante': {'1.0': 1},
+
+    'Tipo de Pprotesis sobre implante': {'Corona unitaria': 1, '0':0, 'Prótesis híbrida':2, 'Sobredentadura':3, 'Puente sobre implantes':4},
+
+    'Caracteristicas del implante': {'16.0': 16},
+
+    'Implante 1 defecto tipo 1 infraóseo': {'0': 0, 'No':1, 'Ic':2, 'Id':3},
+
+    'Alcohol': {'No consumo': 0, 'Consumo moderado':1, 'Consumo elevado':2},
+
+    'Medicacion actual': {'No': 0, 'Sí':1}
+    }
+
+
 
 
     modelo = load('data/modelo_entrenado1.joblib')
@@ -23,7 +44,7 @@ def surveyMod():
         caract_imp = st.selectbox("Características del implante", ('0', '12', '21', '36', '23', '45', '16.0'))
         de_oseo = st.selectbox("Defecto Infraóseo", ("Id", "No", "Implante 1 - Defecto tipo I (infraóseo)", "Ib", "Ic", "Ie"))
         alcohol = st.selectbox("Alcohol", ("No consumo", "Consumo moderado", "Consumo elevado"))
-        medactual = st.selectbox("Medicación Actual", ("No", "Si"))
+        medactual = st.selectbox("Medicación Actual", ("No", "Sí"))
         pos_imp = st.selectbox("Posición del Implante", ('0', '35', '14', '16', '36', '25', '37', '27'))
 
         submitted = st.form_submit_button(label="Submit", use_container_width=False)
