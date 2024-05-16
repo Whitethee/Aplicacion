@@ -134,7 +134,7 @@ def clasificador():
                     """)
         
         with c2:
-            if resp == "Muy fácil":
+            if resp == "Muy Fácil":
                 st.image('data/very_easy.jpg', use_column_width="auto", output_format="JPEG")
             if resp == "Fácil":
                 st.image('data/easy.jpg', use_column_width="auto", output_format="JPEG")
