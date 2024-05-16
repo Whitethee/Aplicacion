@@ -126,10 +126,22 @@ def clasificador():
         response = model.predict(res)
         resp = response[0]
         #st.write(sur_res)
-        st.markdown(f"""
+        c1, c2 = st.columns(2)
+
+        with c1:
+            st.markdown(f"""
                     La operación tendra una dificultad  **{resp}**
                     """)
         
+        with c2:
+            if resp == "Muy fácil":
+                st.image('data/very_easy.jpg', use_column_width="auto", output_format="JPEG")
+            if resp == "Fácil":
+                st.image('data/easy.jpg', use_column_width="auto", output_format="JPEG")
+            if resp == "Difícil":
+                st.image('data/difficult.jpg', use_column_width="auto", output_format="JPEG")
+            if resp == "Muy Difícil":
+                st.image('data/very_diff.jpg', use_column_width="auto", output_format="JPEG")
 
 
 
