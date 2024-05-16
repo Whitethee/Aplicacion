@@ -33,7 +33,7 @@ def surveyMod():
 
 
 
-    modelo = load('data/modelo_entrenado1.joblib')
+    modelo = load('data/modelo_entrenado_Tiempo.joblib')
 
     with st.form("Model-Survey"):
         inter = st.selectbox("Tipo de Intervencion", ("Cirugía Dentoalveolar", "Cirugía Peri-implantaria", "Implantología Bucal"))
