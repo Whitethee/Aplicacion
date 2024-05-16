@@ -74,7 +74,7 @@ def clasificador():
         st.session_state.submissions.append(sur_res)
         res = pd.DataFrame([sur_res])
         data = autoclean(res)
-        st.write(res)
+        st.write(sur_res)
 
 
 
