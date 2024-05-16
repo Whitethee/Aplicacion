@@ -45,4 +45,22 @@ with c2:
 Nuestra aplicación está diseñada no solo para responder a las necesidades actuales de las clínicas dentales sino también para adaptarse a los cambios y desafíos futuros del sector de la salud dental.
                 Nos esforzamos por ser pioneros en el campo, proporcionando herramientas que hacen una diferencia tangible en la vida diaria de los profesionales y sus pacientes
                 """)
+    
+st.write("______________________________________________________________")
 
+col1, col2, col3, col4, col5= st.columns(5)
+
+with col1:
+    st.image('data/manue-modified.png', use_column_width="auto", output_format="PNG")
+
+with col2:
+    st.image('data/jezabel-modified.png', use_column_width="auto", output_format="PNG")
+
+with col3:
+    st.image('data/jazmina-modified.png', use_column_width="auto", output_format="PNG")
+
+with col4:
+    st.image('data/euge-modified.png', use_column_width="auto", output_format="PNG")
+
+with col5:
+    st.write("Aqui va Carla")
