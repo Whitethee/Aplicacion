@@ -49,7 +49,7 @@ def clasificador():
 
     with st.form("Clasificador-Survey"):
         genero = st.selectbox("Género", ("Hombre", "Mujer"))
-        edad = st.number_input("Edad")
+        #edad = st.number_input("Edad")
         alc = st.selectbox("Alcohol", ("No consumo", "Consumo moderado", "Consumo elevado"))
         hipart = st.checkbox("Hipertensión Arterial")
         hipcol = st.checkbox("Hipercolesterolemia")
@@ -107,7 +107,7 @@ def clasificador():
             "Tipo de Intervención Quirúrgica": intquir,
             "Tipo de cirugía": tipocir,
             "Duración de la intervención quirúrgica": duracion,
-            "Edad": int(edad),
+            
         }
 
         st.session_state.submissions.append(sur_res)
