@@ -126,9 +126,9 @@ def clasificador():
         response = model.predict(res)
         resp = response[0]
         #st.write(sur_res)
+        st.write("_____________________________________________________________")
         c1, c2 = st.columns(2)
 
-        st.write("_____________________________________________________________")
 
         with c1:
             st.markdown(f"""
