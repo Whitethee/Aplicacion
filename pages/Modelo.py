@@ -69,17 +69,18 @@ def surveyMod():
         st.session_state.submissions.append(survey_results)
         #results = pd.DataFrame(survey_results)
         results = pd.DataFrame([survey_results])
+        st.write(results)
+        data = results.replace(mappings, inplace=True)
 
-        data = results.fillna(0)
+        data = data.fillna(0)
 
 # Convertir todas las columnas a enteros
         data = data.astype(float)
 
 # Verificar los nuevos tipos de datos
         print(data.dtypes)
-        
-        st.write(results)
-        data = data.replace(mappings, inplace=True)
+
+ 
         st.write(data)
         res = modelo.predict(data)
         res = res
