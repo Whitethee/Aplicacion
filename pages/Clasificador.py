@@ -121,6 +121,7 @@ def clasificador():
         res.replace('na', pd.NA, inplace=True)
         res.replace('no', pd.NA, inplace=True)
         res.dropna(inplace=True) 
+        st.write("En el siguiente DataFrame se exponen los datos usados para predecir")
         st.write(res)
         
         response = model.predict(res)
