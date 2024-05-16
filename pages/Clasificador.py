@@ -114,7 +114,7 @@ def clasificador():
         }
 
         st.session_state.submissions.append(sur_res)
-        st.session_state.user_input = ""
+        
 
         # Convertimos los datos de la encuesta en DataFrame
 
@@ -151,6 +151,7 @@ def clasificador():
 
         st.session_state.user_input = ""
 
+    
 
 
 clasificador()
