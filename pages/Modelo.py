@@ -9,6 +9,8 @@ def surveyMod():
 
     st.title("Predicción de Tiempo Quirúrgico")
 
+    st.write("________________________________________________________________")
+
     descp = f"""
     Nestro modelo **PredictOR** utiliza técnicas avanzadas de **ciencia de datos** para 
     predecir la duración de las intevenciones quirúrgicas. <br>
