@@ -8,8 +8,17 @@ from joblib import load
 
 def clasificador():
 
-    st.title("Clasificador de Intervenciones")
+    st.title("Clasificación de Intervenciones")
     st.write("__________________________________________________")
+
+    desc = f"""
+    Utliza nuestro cuestionario de 10 preguntas para clasificar la complejidad de las intervenciones 
+    dentales. Este sistema nos ayuda a organizar mejor las operaciones, categorizandolas en
+    **muy fácil**, **fácil**, **moderada**, **difíciles** o **muy difíciles**.
+    Así, podemos asignar los casos más adecuado a nuestros estudiantes y
+    asegurar una experiencia de aprendizaje óptima
+    """
+    st.markdown(desc, unsafe_allow_html=True)
 
     if 'submissions' not in st.session_state:
         st.session_state.submissions = []
