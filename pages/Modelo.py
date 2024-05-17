@@ -12,7 +12,7 @@ def surveyMod():
     st.write("________________________________________________________________")
 
     descp = f"""
-    Nestro modelo **PredictOR** utiliza técnicas avanzadas de **ciencia de datos** para 
+    Nuestro modelo **PredictOR** utiliza técnicas avanzadas de **ciencia de datos** para 
     predecir la duración de las intevenciones quirúrgicas. <br>
     Con esta herramienta, podemos mejorar la planificación y programación
     de las operaciones, asegurando un uso más eficiente de nuestras camillas y recursos
