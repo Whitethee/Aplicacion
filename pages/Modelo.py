@@ -30,11 +30,8 @@ def surveyMod():
 
     'Material de regeneracion': {'Xenoinjerto (Bio-Oss) + Membrana de colágeno reabsorbible (Bio-Gide)': 1,'0': 0},
 
-    'Numero de implante': {'1': 1},
 
     'Tipo de Pprotesis sobre implante': {'Corona unitaria': 1, '0':0, 'Prótesis híbrida':2, 'Sobredentadura':4, 'Puente sobre implantes':3},
-
-    'Caracteristicas del implante': {'16.0': 16},
 
     'Implante 1 defecto tipo 1 infraóseo': {'0': 0, 'No':1, 'Ic':2, 'Id':3},
 
