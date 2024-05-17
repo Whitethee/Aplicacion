@@ -26,13 +26,13 @@ def surveyMod():
     mappings = {
     'Tipo Intervencion': {'Cirugía Dentoalveolar': 0, 'Cirugía Peri-implantaria': 1, 'Implantología Bucal':2},
 
-    'Tipo de Cirugia': {'Cirugía combinada (regenerativa + implantoplastia)': 0, 'Cirugía resectiva': 1, 'Cirugía de acceso': 2, 'Cirugía regenerativa': 3},
+    'Tipo de Cirugia': {0: 0, 'Cirugía combinada (regenerativa + implantoplastia)': 1, 'Cirugía resectiva': 4, 'Cirugía de acceso': 2, 'Cirugía regenerativa': 3},
 
     'Material de regeneracion': {'Xenoinjerto (Bio-Oss) + Membrana de colágeno reabsorbible (Bio-Gide)': 1,'0': 0},
 
-    'Numero de implante': {'1.0': 1},
+    'Numero de implante': {'1': 1},
 
-    'Tipo de Pprotesis sobre implante': {'Corona unitaria': 1, '0':0, 'Prótesis híbrida':2, 'Sobredentadura':3, 'Puente sobre implantes':4},
+    'Tipo de Pprotesis sobre implante': {'Corona unitaria': 1, '0':0, 'Prótesis híbrida':2, 'Sobredentadura':4, 'Puente sobre implantes':3},
 
     'Caracteristicas del implante': {'16.0': 16},
 
@@ -51,7 +51,7 @@ def surveyMod():
 
     with st.form("Model-Survey"):
         inter = st.selectbox("Tipo de Intervencion", ("Cirugía Dentoalveolar", "Cirugía Peri-implantaria", "Implantología Bucal"))
-        cirugia = st.selectbox("Tipo de Cirugia", ("Cirugía combinada (regenerativa + implantoplastia)", "Cirugía de acceso", "Cirugía resectiva", "Cirugía regenerativa"))
+        cirugia = st.selectbox("Tipo de Cirugia", (0, "Cirugía combinada (regenerativa + implantoplastia)", "Cirugía de acceso", "Cirugía resectiva", "Cirugía regenerativa"))
         mat_regen = st.selectbox("Material de Regeneracion", ("0", "Xenoinjerto (Bio-Oss) + Membrana de colágeno reabsorbible (Bio-Gide)"))
         num_implante = st.selectbox("Número de implantes",  (1, 2, 3, 4, 5, 6))
         tipo_prot = st.selectbox("Tipo de Protesis", (0, "Corona unitaria", "Puente sobre implantes", "Prótesis híbrida", "Sobredentadura", "Full-arch metal-cerámica"))
