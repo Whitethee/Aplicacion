@@ -90,8 +90,10 @@ def surveyMod():
         results = pd.DataFrame([survey_results])
         st.write(results)
         for i in results.columns:
-            data = i.replace(mappings, inplace= True)
+            data = results[i].replace(mappings, inplace = True )
             st.write(data)
+
+            
         data = results.replace(mappings, inplace=True)
         st.write(data)
         res = modelo.predict(data)
