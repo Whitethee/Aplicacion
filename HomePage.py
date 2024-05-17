@@ -10,13 +10,9 @@ st.set_page_config(
     page_icon="👋"
 )
 st.title("Plataforma de Gestión Clínica")
-st.header("Bienvenido a nuestra plataforma de gestión y agendado de pacientes. Nuestro objetivo es optimizar el uso de nuestras camillas y permitir que más estudiantes puedan recibir la formación práctica que necesitan.")
-st.subheader("Navega por nuestra aplicación para conocer más sobre cómo clasificamos y gestionamos las intervenciones dentales, y cómo utilizamos datos para mejorar la eficiencia en nuestra clínica.")
-f = f"""
-    <span style="font-weight:bold;">Información</span>
-    """
+st.write("Bienvenido a nuestra plataforma de gestión y agendado de pacientes. Nuestro objetivo es optimizar el uso de nuestras camillas y permitir que más estudiantes puedan recibir la formación práctica que necesitan.")
+st.write("Navega por nuestra aplicación para conocer más sobre cómo clasificamos y gestionamos las intervenciones dentales, y cómo utilizamos datos para mejorar la eficiencia en nuestra clínica.")
 
-st.write(f, unsafe_allow_html=True)
 st.write("__________________________________________________________________________________")
 
 c1, c2 = st.columns(2)
