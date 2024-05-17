@@ -14,7 +14,7 @@ def clasificador():
     desc = f"""
     Utliza nuestro cuestionario de 10 preguntas para clasificar la complejidad de las intervenciones 
     dentales. Este sistema nos ayuda a organizar mejor las operaciones, categorizandolas en
-    **muy fácil**, **fácil**, **moderada**, **difíciles** o **muy difíciles**.
+    **muy fácil**, **fácil**, **moderada**, **difíciles** o **muy difíciles**./n
     Así, podemos asignar los casos más adecuado a nuestros estudiantes y
     asegurar una experiencia de aprendizaje óptima
     """
