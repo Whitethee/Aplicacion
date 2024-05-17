@@ -63,4 +63,4 @@ with col4:
     st.image('data/euge-modified.png', use_column_width="auto", output_format="PNG")
 
 with col5:
-    st.write("Aqui va Carla")
+    st.image('data/carla-modified.png', use_column_width="auto", output_format="PNG")
