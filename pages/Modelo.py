@@ -33,7 +33,7 @@ def surveyMod():
 
     'Tipo de Pprotesis sobre implante': {'Corona unitaria': 1, '0':0, 'Prótesis híbrida':2, 'Sobredentadura':4, 'Puente sobre implantes':3},
 
-    'Implante 1 defecto tipo 1 infraóseo': {'0': 0, 'No':1, 'Ic':2, 'Id':3},
+    'Implante 1 defecto tipo 1 infraóseo': {'0': 0, 'No':5, 'Ic':2, 'Id':3, 'Ie':4},
 
     'Alcohol': {'No consumo': 0, 'Consumo moderado':1, 'Consumo elevado':2},
 
@@ -53,7 +53,7 @@ def surveyMod():
         num_implante = st.selectbox("Número de implantes",  (1, 2, 3, 4, 5, 6))
         tipo_prot = st.selectbox("Tipo de Protesis", (0, "Corona unitaria", "Puente sobre implantes", "Prótesis híbrida", "Sobredentadura", "Full-arch metal-cerámica"))
         caract_imp = st.selectbox("Características del implante", ('0', '12', '21', '36', '23', '45', '16.0'))
-        de_oseo = st.selectbox("Defecto Infraóseo", ("Id", "No", "Implante 1 - Defecto tipo I (infraóseo)", "Ib", "Ic", "Ie"))
+        de_oseo = st.selectbox("Defecto Infraóseo", ("Id", "No", "Ib", "Ic", "Ie"))
         alcohol = st.selectbox("Alcohol", ("No consumo", "Consumo moderado", "Consumo elevado"))
         medactual = st.selectbox("Medicación Actual", ("No", "Sí"))
         pos_imp = st.selectbox("Posición del Implante", ('0', '35', '14', '16', '36', '25', '37', '27'))
