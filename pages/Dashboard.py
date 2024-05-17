@@ -18,7 +18,7 @@ from ipywidgets import interact, IntRangeSlider
 
 def dashboard():
     data = pd.read_csv("data/data_APP.csv")
-    st.title('Monitor Médico')
+    st.title('Estadísticas de Intervenciones')
     st.markdown("""
 # Bienvenido/a al dashboard de nuestra aplicación web
 

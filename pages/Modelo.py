@@ -6,6 +6,17 @@ import pickle
 
 def surveyMod():
 
+
+    st.title("Predicción de Tiempo Quirúrgico")
+
+    descp = f"""
+    Nestro modelo **PredictOR** utiliza técnicas avanzadas de **ciencia de datos** para 
+    predecir la duración de las intevenciones quirúrgicas. <br>
+    Con esta herramienta, podemos mejorar la planificación y programación
+    de las operaciones, asegurando un uso más eficiente de nuestras camillas y recursos
+    """
+    st.markdown(descp, unsafe_allow_html=True)
+
     if 'submissions' not in st.session_state:
         st.session_state.submissions = []
 
