@@ -63,7 +63,7 @@ def surveyMod():
     if submitted:
         # Store the selected options in a dictionary or any other data structure
         survey_results = {
-            "Tipo Intervencion" : inter,
+            "Tipo.de.Intervención.Quirúrgica" : inter,
             "Tipo de Cirugia": cirugia,
             "Material de regeneracion": mat_regen,
             "Numero de implante": num_implante,
