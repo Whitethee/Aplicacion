@@ -6,7 +6,8 @@ import pickle
 
 
 
-st.set_page_config(page_title="Estimador de Duracion ")
+st.set_page_config(page_title="Estimador de Duracion ",
+                   page_icon="🕐")
 
 def surveyMod():
 
