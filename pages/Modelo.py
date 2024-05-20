@@ -59,7 +59,7 @@ def surveyMod():
         cirugia = st.selectbox("Tipo de Cirugia", (0, "Cirugía combinada (regenerativa + implantoplastia)", "Cirugía resectiva", "Cirugía regenerativa"))
         mat_regen = st.selectbox("Material de Regeneracion", ("0", "Xenoinjerto (Bio-Oss) + Membrana de colágeno reabsorbible (Bio-Gide)"))
         num_implante = st.selectbox("Número de implantes",  (0, 1, 2, '1.0'))
-        tipo_prot = st.selectbox("Tipo de Protesis", (0,  "Puente sobre implantes", "Prótesis híbrida", "Sobredentadura", "Full-arch metal-cerámica"))
+        tipo_prot = st.selectbox("Tipo de Protesis", (0,  "Puente sobre implantes", "Prótesis híbrida", "Sobredentadura"))
         caract_imp = st.selectbox("Características del implante", (0, 12, '16.0'))
         def_suposeo = st.selectbox("Defecto Supraoseo Implante 1", (0, "Sí", "No"))
         caract_imp2 = st.selectbox("Caracteristicas del implante 2", (0, 34, 42))
