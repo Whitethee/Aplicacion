@@ -91,7 +91,7 @@ def surveyMod():
         results = pd.DataFrame([survey_results])
         st.write(results)
         
-        data = pd.results.replace(mappings, inplace = True )
+        data = results.replace(mappings, inplace = True )
         st.write(data)
 
 
