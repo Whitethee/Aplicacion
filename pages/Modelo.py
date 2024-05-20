@@ -132,12 +132,14 @@ def surveyMod():
                 st.markdown("""
                     <style>
                     .big-font {
-                    font-size:50px !important;
+                    font-size:60px !important;  # Hace el número más grande
                     font-weight: bold;
                     }
+                    .small-font {
+                    font-size:30px !important;  # Hace el prefijo más pequeño
+                    }
                     </style>""", unsafe_allow_html=True)
-                
-                st.markdown(f'<p class="big-font">El tiempo estimado de la intevención es: {res}</p>', unsafe_allow_html=True)
+                st.markdown(f'<p class="small-font">El resultado es </p><p class="big-font">{res}</p>', unsafe_allow_html=True)
 
             with c2:
                 st.image("verdecirc.jpg", use_column_width="auto", output_format="PNG")
