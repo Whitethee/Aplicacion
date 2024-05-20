@@ -6,10 +6,10 @@ import pickle
 from datacleaner import autoclean
 from joblib import load
 
+st.set_page_config(page_title= "Clasificador de Intervenciones")
 
 def clasificador():
 
-    st.set_page_config(page_title= "Clasificador de Intervenciones")
 
     st.title("Clasificación de Intervenciones")
     st.write("__________________________________________________")

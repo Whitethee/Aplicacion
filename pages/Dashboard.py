@@ -15,6 +15,8 @@ from wordcloud import WordCloud
 
 from ipywidgets import interact, IntRangeSlider
 
+st.set_page_config(page_title="Dashboard")
+
 
 
 

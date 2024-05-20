@@ -4,6 +4,10 @@ import pandas as pd
 from datacleaner import autoclean
 import pickle
 
+
+
+st.set_page_config(page_title="Estimador de Duracion ")
+
 def surveyMod():
 
 
