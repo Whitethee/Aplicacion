@@ -46,7 +46,7 @@ su frecuencia y su duración. Este análisis nos ayuda a planificar y gestionar 
 # Crear un nuevo DataFrame con las columnas seleccionadas
     data2 = data2[columnas_seleccionadas]
 
-    c1, c2, c3 = st.columns(3)
+    c1, c2 = st.columns(2)
 
     with c1:
         categories = data2['Género'].dropna()
@@ -99,27 +99,8 @@ su frecuencia y su duración. Este análisis nos ayuda a planificar y gestionar 
         st.plotly_chart(fig)
 
 
+
         with c2:
-            data_w = data2['Tipo de edentulismo'].dropna()
-
-
-            text = ' '.join(data_w.astype(str))
-
-# Definir el colormap deseado
-            colormap = 'Blues'  # Cambia esto a cualquier colormap que prefieras
-
-# Generar el WordCloud
-            wordcloud = WordCloud(width=800, height=400, background_color='white', colormap=colormap).generate(text)
-
-# Mostrar el WordCloud
-            plt.figure(figsize=(10, 5))
-            plt.imshow(wordcloud, interpolation='bilinear')
-            plt.axis('off')
-            plt.title('Type of edentulism')
-            st.pyplot(plt)
-
-
-        with c3:
             data_l = data2['Localización'].dropna()
 
 
@@ -156,6 +137,24 @@ su frecuencia y su duración. Este análisis nos ayuda a planificar y gestionar 
                            )
             )
             st.plotly_chart(fig)
+
+        data_w = data2['Tipo de edentulismo'].dropna()
+
+
+        text = ' '.join(data_w.astype(str))
+
+# Definir el colormap deseado
+        colormap = 'Blues'  # Cambia esto a cualquier colormap que prefieras
+
+# Generar el WordCloud
+        wordcloud = WordCloud(width=800, height=400, background_color='white', colormap=colormap).generate(text)
+
+# Mostrar el WordCloud
+        plt.figure(figsize=(10, 5))
+        plt.imshow(wordcloud, interpolation='bilinear')
+        plt.axis('off')
+        plt.title('Type of edentulism')
+        st.pyplot(plt)
 
 
         
