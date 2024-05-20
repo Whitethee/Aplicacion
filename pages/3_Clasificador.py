@@ -6,7 +6,8 @@ import pickle
 from datacleaner import autoclean
 from joblib import load
 
-st.set_page_config(page_title= "Clasificador de Intervenciones")
+st.set_page_config(page_title= "Clasificador de Intervenciones",
+                   page_icon=	"🎏")
 
 def clasificador():
 
