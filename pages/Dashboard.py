@@ -118,7 +118,7 @@ Este dashboard proporciona acceso inmediato a información crítica, facilitando
             plt.imshow(wordcloud, interpolation='bilinear')
             plt.axis('off')
             plt.title('Type of edentulism')
-            st.plotly_chart(wordcloud)
+            st.pyplot(plt)
 
         
 
