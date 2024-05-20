@@ -1,9 +1,7 @@
 
 import markdown
 import streamlit as st
-from pages.Dashboard import dashboard
-from pages.Modelo import surveyMod
-from pages.Clasificador import clasificador
+
 
 st.set_page_config(
     page_title="Software de Predicción Quirúrgica",
