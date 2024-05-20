@@ -49,54 +49,24 @@ su frecuencia y su duración. Este análisis nos ayuda a planificar y gestionar 
     c1, c2 = st.columns(2)
 
     with c1:
-        categories = data2['Género'].dropna()
-        durations = data2['Duración de la intervención quirúrgica'].dropna()
+        data_w = data2['Tipo de edentulismo'].dropna()
 
-# Crear un DataFrame
-        data_G = pd.DataFrame({
-            'Género': categories,
-            'Duración': durations
-        })
 
-# Eliminar filas con categorías o valores NaN
-        data_G.dropna(inplace=True)
+        text = ' '.join(data_w.astype(str))
 
-# Preparar datos para el gráfico de barras apiladas
-        stacked_data = data_G.groupby(['Género', 'Duración']).size().unstack(fill_value=0)
+# Definir el colormap deseado
+        colormap = 'Blues'  # Cambia esto a cualquier colormap que prefieras
 
-# Definir colores personalizados para cada rango de duración
-        colors = {
-    '0-5 minutos': '#020659',
-    '5-10 minutos': '#2155BF',
-    '10-20 minutos': '#71CEF2',
-    '20-40 minutos': '#58A8D9',
-    '40-60 minutos': '#4393D9',
-    '60-90 minutos': '#020659',
-    '90-120 minutos': '#2155BF',
-    '120-180 minutos': '#71CEF2',
-    '>180 minutos': '#58A8D9'
-}
+# Generar el WordCloud
+        wordcloud = WordCloud(width=800, height=400, background_color='white', colormap=colormap).generate(text)
 
-# Crear el gráfico de barras apiladas
-        fig = go.Figure()
-
-        for duration in stacked_data.columns:
-            fig.add_trace(go.Bar(
-            x=stacked_data.index,
-            y=stacked_data[duration],
-            name=duration,
-            marker_color=colors[duration]  # Usar colores personalizados
-            ))
-
-# Añadir características del gráfico
-        fig.update_layout(
-           barmode='stack',
-           title='Distribution of Intervention Duration by Gender',
-           xaxis_title='Gender',
-           yaxis_title='Count of Intervention',
-           template='plotly_white')
+# Mostrar el WordCloud
+        plt.figure(figsize=(10, 5))
+        plt.imshow(wordcloud, interpolation='bilinear')
+        plt.axis('off')
+        plt.title('Type of edentulism')
+        st.pyplot(plt)
         
-        st.plotly_chart(fig)
 
 
 
@@ -138,24 +108,58 @@ su frecuencia y su duración. Este análisis nos ayuda a planificar y gestionar 
             )
         st.plotly_chart(fig)
 
-    data_w = data2['Tipo de edentulismo'].dropna()
 
 
-    text = ' '.join(data_w.astype(str))
+    categories = data2['Género'].dropna()
+    durations = data2['Duración de la intervención quirúrgica'].dropna()
 
-# Definir el colormap deseado
-    colormap = 'Blues'  # Cambia esto a cualquier colormap que prefieras
+# Crear un DataFrame
+    data_G = pd.DataFrame({
+            'Género': categories,
+            'Duración': durations
+    })
 
-# Generar el WordCloud
-    wordcloud = WordCloud(width=800, height=400, background_color='white', colormap=colormap).generate(text)
+# Eliminar filas con categorías o valores NaN
+    data_G.dropna(inplace=True)
 
-# Mostrar el WordCloud
-    plt.figure(figsize=(10, 5))
-    plt.imshow(wordcloud, interpolation='bilinear')
-    plt.axis('off')
-    plt.title('Type of edentulism')
-    st.pyplot(plt)
+# Preparar datos para el gráfico de barras apiladas
+    stacked_data = data_G.groupby(['Género', 'Duración']).size().unstack(fill_value=0)
+
+# Definir colores personalizados para cada rango de duración
+    colors = {
+    '0-5 minutos': '#020659',
+    '5-10 minutos': '#2155BF',
+    '10-20 minutos': '#71CEF2',
+    '20-40 minutos': '#58A8D9',
+    '40-60 minutos': '#4393D9',
+    '60-90 minutos': '#020659',
+    '90-120 minutos': '#2155BF',
+    '120-180 minutos': '#71CEF2',
+    '>180 minutos': '#58A8D9'
+}
+
+# Crear el gráfico de barras apiladas
+    fig = go.Figure()
+
+    for duration in stacked_data.columns:
+        fig.add_trace(go.Bar(
+        x=stacked_data.index,
+        y=stacked_data[duration],
+        name=duration,
+        marker_color=colors[duration]  # Usar colores personalizados
+        ))
+
+# Añadir características del gráfico
+    fig.update_layout(
+           barmode='stack',
+           title='Distribution of Intervention Duration by Gender',
+           xaxis_title='Gender',
+           yaxis_title='Count of Intervention',
+           template='plotly_white')
+        
+    st.plotly_chart(fig)
     
+    st.write("________________________________________________-")
 
     data = pd.read_excel('data/datos_APP1.xlsx', index_col=0)
 
@@ -171,11 +175,6 @@ su frecuencia y su duración. Este análisis nos ayuda a planificar y gestionar 
 
 # Convertir la columna de fecha a datetime
     data['Fecha.Intervención'] = pd.to_datetime(data['Fecha.Intervención'])
-
-# Configuración de Streamlit
-    st.title('Distribución de Duraciones de Intervenciones Quirúrgicas')
-
-
 
 # Obtener el rango de años del DataFrame
     min_year = int(data['Fecha.Intervención'].dt.year.min())
