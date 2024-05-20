@@ -155,38 +155,6 @@ su frecuencia y su duración. Este análisis nos ayuda a planificar y gestionar 
     plt.axis('off')
     plt.title('Type of edentulism')
     st.pyplot(plt)
-
-
-        
-
-# Mostrar el nuevo DataFrame
-   
-
-
-     
-    data['Fecha.de.Nacimiento'] = pd.to_datetime(data['Fecha.de.Nacimiento'], dayfirst=True, errors='coerce')
-
-# Calcular la edad en años
-    data['Edad'] = (pd.Timestamp.now() - data['Fecha.de.Nacimiento']).dt.days // 365
-
-    data.dropna(subset=['Tipo.de.Intervención.Quirúrgica', 'Edad', 'Duración.de.la.intervención.quirúrgica'], inplace=True)
-
-
-# Crear el gráfico
-    fig = px.bar(
-    data, 
-    x='Tipo.de.Intervención.Quirúrgica', 
-    y='Edad', 
-    color='Duración.de.la.intervención.quirúrgica',
-    title='Edad por Tipo de Intervención y Duración',
-    labels={
-        'Edad': 'Edad en Años', 
-        'Tipo.de.Intervención.Quirúrgica': 'Tipo de Intervención', 
-        'Duración.de.la.intervención.quirúrgica': 'Duración de Intervención'
-    }
-)
-# Mostrar el gráfico en Streamlit
-    st.plotly_chart(fig)
     
 
     data = pd.read_excel('data/datos_APP1.xlsx', index_col=0)
