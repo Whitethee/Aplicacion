@@ -100,19 +100,19 @@ su frecuencia y su duración. Este análisis nos ayuda a planificar y gestionar 
 
 
 
-        with c2:
-            data_l = data2['Localización'].dropna()
+    with c2:
+        data_l = data2['Localización'].dropna()
 
 
-            unique, counts = np.unique(data_l[~pd.isnull(data_l)], return_counts=True)
+        unique, counts = np.unique(data_l[~pd.isnull(data_l)], return_counts=True)
 
-            data_dict = dict(zip(unique, counts))
+        data_dict = dict(zip(unique, counts))
 
 
-            colors = ['#2155BF', '#71CEF2']  # Azul oscuro y Azul claro
+        colors = ['#2155BF', '#71CEF2']  # Azul oscuro y Azul claro
 
 # Crear el gráfico de dona
-            fig = go.Figure(data=[go.Pie(
+        fig = go.Figure(data=[go.Pie(
                 labels=list(data_dict.keys()),
                 values=list(data_dict.values()),
                 hole=.4,  # Tamaño del agujero central, haciendo que parezca una dona
@@ -122,7 +122,7 @@ su frecuencia y su duración. Este análisis nos ayuda a planificar y gestionar 
                 )])
 
 # Añadir título
-            fig.update_layout(
+        fig.update_layout(
                 title={
                 'text': "Location Distribution",
                 'y':0.9,
@@ -136,7 +136,7 @@ su frecuencia y su duración. Este análisis nos ayuda a planificar y gestionar 
                 color="black"
                            )
             )
-            st.plotly_chart(fig)
+        st.plotly_chart(fig)
 
         data_w = data2['Tipo de edentulismo'].dropna()
 
