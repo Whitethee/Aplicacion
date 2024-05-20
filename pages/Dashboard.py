@@ -29,7 +29,7 @@ Explora los datos sobre las intervenciones quirúrgicas realizadas en la clínic
 su frecuencia y su duración. Este análisis nos ayuda a planificar y gestionar mejor los recursos.
 
 1. **información de Pacientes**: Consulta la información detallada sobre nuestros pacientes.
-                Esta aapartado incluye datos demográficos, historial médico y tratamientos realizados.
+                Este apartado incluye datos demográficos, historial médico y tratamientos realizados.
                 Con estos datos, podemos personalizar la atención y mejorar la experiencia de cada paciente.
 """)
     st.write("____________________________________________________")
