@@ -132,8 +132,8 @@ Este dashboard proporciona acceso inmediato a información crítica, facilitando
 
 # Crear el gráfico de dona
             fig = go.Figure(data2=[go.Pie(
-                labels=list(data_l.keys()),
-                values=list(data_l.values()),
+                labels=unique,
+                values=counts,
                 hole=.4,  # Tamaño del agujero central, haciendo que parezca una dona
                 marker_colors=colors,  # Colores de las secciones
                 hoverinfo='label+percent',  # Mostrar etiquetas y porcentajes al pasar el mouse
