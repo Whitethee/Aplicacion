@@ -1,0 +1,17 @@
+[pages]
+[[pages]]
+
+title = "Home"
+path = "HomePage.py"
+
+[[pages]]
+title = "Dashboard"
+path = "Dashboard.py"
+
+[[pages]]
+title = "Predicción de Tiempo Quirúrgico"
+path = "Modelo.py"
+
+[[pages]]
+title = "Clasificador de Intervenciones"
+path = "Clasificador.py"
