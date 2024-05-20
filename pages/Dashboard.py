@@ -160,7 +160,7 @@ su frecuencia y su duración. Este análisis nos ayuda a planificar y gestionar 
         
     st.plotly_chart(fig)
     
-    st.write("________________________________________________-")
+    st.write("________________________________________________")
 
     data = pd.read_excel('data/datos_APP1.xlsx', index_col=0)
 
