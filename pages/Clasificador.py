@@ -157,15 +157,15 @@ def clasificador():
         
         with c2:
             if resp == "Muy Fácil":
-                st.image('data/very_easy.jpg', use_column_width="auto", output_format="JPEG")
+                st.image('data/very_easy.jpeg', use_column_width="auto", output_format="JPEG")
             if resp == "Fácil":
-                st.image('data/easy.jpg', use_column_width="auto", output_format="JPEG")
+                st.image('data/easy.jpeg', use_column_width="auto", output_format="JPEG")
             if resp == "Moderada":
-                st.image('data/difficult.jpg', use_column_width="auto", output_format="JPEG")
+                st.image('data/moderade.jpeg', use_column_width="auto", output_format="JPEG")
             if resp == "Difícil":
-                st.image('data/difficult.jpg', use_column_width="auto", output_format="JPEG")
+                st.image('data/difficult.jpeg', use_column_width="auto", output_format="JPEG")
             if resp == "Muy Difícil":
-                st.image('data/very_diff.jpg', use_column_width="auto", output_format="JPEG")
+                st.image('data/very_diff.jpeg', use_column_width="auto", output_format="JPEG")
 
 
     
