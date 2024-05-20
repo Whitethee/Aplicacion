@@ -24,6 +24,7 @@ def surveyMod():
 
 
     mappings = {
+
     'Tipo de intervencióm quirurgica': {'Cirugía Dentoalveolar': 0, 'Cirugía Peri-implantaria': 1, 'Implantología Bucal':2},
 
     'Tipo de cirugía': {0: 0, 'Cirugía combinada (regenerativa + implantoplastia)': 1, 'Cirugía resectiva': 4, 'Cirugía regenerativa': 3},
@@ -31,7 +32,7 @@ def surveyMod():
     'Material de regeneración': {'Xenoinjerto (Bio-Oss) + Membrana de colágeno reabsorbible (Bio-Gide)': 1,'0': 0},
 
 
-    'Tipo de prótesis': {'0':0, 'Prótesis híbrida':2, 'Sobredentadura':4, 'Puente sobre implantes':3},
+    'Tipo de prótesis': {'0':0, 'Prótesis híbrida':2, 'Sobredentadura':4, 'Puente sobre implantes':1},
 
     'Implante 1 defecto tipo 1 infraóseo': {'0': 0, 'No':3, 'Id':1},
 
@@ -55,14 +56,14 @@ def surveyMod():
 
     with st.form("Model-Survey"):
         inter = st.selectbox("Tipo de Intervencion Quirúrgica", ("Cirugía Dentoalveolar", "Cirugía Peri-implantaria", "Implantología Bucal"))
-        cirugia = st.selectbox("Tipo de Cirugia", (0, "Cirugía combinada (regenerativa + implantoplastia)", "Cirugía de acceso", "Cirugía resectiva", "Cirugía regenerativa"))
+        cirugia = st.selectbox("Tipo de Cirugia", (0, "Cirugía combinada (regenerativa + implantoplastia)", "Cirugía resectiva", "Cirugía regenerativa"))
         mat_regen = st.selectbox("Material de Regeneracion", ("0", "Xenoinjerto (Bio-Oss) + Membrana de colágeno reabsorbible (Bio-Gide)"))
         num_implante = st.selectbox("Número de implantes",  (0, 1, 2, '1.0'))
         tipo_prot = st.selectbox("Tipo de Protesis", (0, "Corona unitaria", "Puente sobre implantes", "Prótesis híbrida", "Sobredentadura", "Full-arch metal-cerámica"))
         caract_imp = st.selectbox("Características del implante", (0, 12, '16.0'))
         def_suposeo = st.selectbox("Defecto Supraoseo Implante 1", (0, "Sí", "No"))
         caract_imp2 = st.selectbox("Caracteristicas del implante 2", (0, 34, 42))
-        de_oseo = st.selectbox("Defecto Infraóseo", (0, "No", "Ib"))
+        de_oseo = st.selectbox("Defecto Infraóseo", (0, "No", "Id"))
         alcohol = st.selectbox("Alcohol", ("No consumo", "Consumo moderado", "Consumo elevado"))
 
 
@@ -80,7 +81,7 @@ def surveyMod():
             "Caracteristicas del implante": caract_imp,
             "Características del implante 2": caract_imp2,
             "Implante 1 defecto tipo 1 infraóseo": de_oseo,
-            "Implante 1 defecto tipo 2 supraóseo." : def_suposeo,
+            "Implante 1 defecto tipo 2 supraóseo" : def_suposeo,
         }
 
         
