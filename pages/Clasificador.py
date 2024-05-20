@@ -1,3 +1,4 @@
+from turtle import title
 from numpy import NaN
 import streamlit as st
 import pandas as pd
@@ -7,6 +8,8 @@ from joblib import load
 
 
 def clasificador():
+
+    st.set_page_config(title= "Clasificador de Intervenciones")
 
     st.title("Clasificación de Intervenciones")
     st.write("__________________________________________________")
