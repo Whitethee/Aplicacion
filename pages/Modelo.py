@@ -128,7 +128,16 @@ def surveyMod():
             c1, c2 = st.columns(2)
 
             with c1:
-                st.write((f"El resultado es {res}"))
+
+                st.markdown("""
+                    <style>
+                    .big-font {
+                    font-size:50px !important;
+                    font-weight: bold;
+                    }
+                    </style>""", unsafe_allow_html=True)
+                
+                st.markdown(f'<p class="big-font">El resultado es {res}</p>', unsafe_allow_html=True)
 
             with c2:
                 st.image("verdecirc.jpg", use_column_width="auto", output_format="PNG")
