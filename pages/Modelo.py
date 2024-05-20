@@ -23,90 +23,113 @@ def surveyMod():
         st.session_state.submissions = []
 
 
-    mappings = {
-
-    'Tipo de intervencióm quirurgica': {'Cirugía Dentoalveolar': 0, 'Cirugía Peri-implantaria': 1, 'Implantología Bucal':2},
-
-    'Tipo de cirugía': {0: 0, 'Cirugía combinada (regenerativa + implantoplastia)': 1, 'Cirugía resectiva': 4, 'Cirugía regenerativa': 3},
-
-    'Material de regeneración': {'Xenoinjerto (Bio-Oss) + Membrana de colágeno reabsorbible (Bio-Gide)': 1,'0': 0},
-
-
-    'Tipo de prótesis': {'0':0, 'Prótesis híbrida':2, 'Sobredentadura':4, 'Puente sobre implantes':1},
-
-    'Implante 1 defecto tipo 1 infraóseo': {'0': 0, 'No':3, 'Id':1},
-
-    'Alcohol': {'No consumo': 2, 'Consumo moderado':1, 'Consumo elevado':0},
-
-
-    'Caracteristicas del implante' : {0:0, 12:1, '16.0': 3},
-
-    'Implante 1 defecto tipo 2 supraóseo.' : {0:0,  "Sí" : 2, "No": 1},
-
-    'Número de implantes' : {0:0, 2:4, 1:1, 6:6, '1.0' : 6},
-    
-    'Características del implante 2' :  {0:0, 34:1, 42:7}
-
+    mapeos = {
+    'Tipo de cirugia': {
+        0: '0',
+        1: 'Cirugía combinada (regenerativa + implantoplastia)',
+        4: 'Cirugía resectiva',
+        2: 'Cirugía regenerativa'
+    },
+    'Tipo de prótesis': {
+        0: '0',
+        2: 'Prótesis híbrida',
+        1: 'Puente sobre implantes',
+        4: 'Sobredentadura'
+    },
+    'Número de implantes': {
+        0: '0',
+        4: '2',
+        1: '1',
+        6: '1.0'
+    },
+    'Tipo de intervencióm quirurgica': {
+        0: 'Cirugía Dentoalveolar',
+        2: 'Implantología Bucal',
+        1: 'Cirugía Peri-implantaria'
+    },
+    'Alcohol': {
+        2: 'No consumo',
+        1: 'Consumo moderado',
+        0: 'Consumo elevado'
+    },
+    'Material de regeneración': {
+        0: '0',
+        1: 'Xenoinjerto (Bio-Oss) + Membrana de colágeno reabsorbible (Bio-Gide)'
+    },
+    'Características del implante': {
+        0: '0',
+        1: '12',
+        3: '16.0'
+    },
+    'Características del implante 2': {
+        0: '0',
+        1: '34',
+        7: '42'
+    },
+    'Implante 1 defecto tipo 1 infraóseo': {
+        0: '0',
+        3: 'No',
+        1: 'Id'
+    },
+    'Implante 1 defecto tipo 2 supraóseo': {
+        0: '0',
+        2: 'Sí',
+        1: 'No'
     }
+    # Añade más mapeos si es necesario
+}
 
 
+    modelo = load('data/modelo_entrenado_DEF.joblib')
 
-
-    modelo = load('data/modelo_entrenado_DEFi.joblib')
-
-    with st.form("Model-Survey"):
-        inter = st.selectbox("Tipo de Intervencion Quirúrgica", ("Cirugía Dentoalveolar", "Cirugía Peri-implantaria", "Implantología Bucal"))
-        cirugia = st.selectbox("Tipo de Cirugia", (0, "Cirugía combinada (regenerativa + implantoplastia)", "Cirugía resectiva", "Cirugía regenerativa"))
-        mat_regen = st.selectbox("Material de Regeneracion", ("0", "Xenoinjerto (Bio-Oss) + Membrana de colágeno reabsorbible (Bio-Gide)"))
-        num_implante = st.selectbox("Número de implantes",  (0, 1, 2, '1.0'))
-        tipo_prot = st.selectbox("Tipo de Protesis", (0,  "Puente sobre implantes", "Prótesis híbrida", "Sobredentadura"))
-        caract_imp = st.selectbox("Características del implante", (0, 12, '16.0'))
-        def_suposeo = st.selectbox("Defecto Supraoseo Implante 1", (0, "Sí", "No"))
-        caract_imp2 = st.selectbox("Caracteristicas del implante 2", (0, 34, 42))
-        de_oseo = st.selectbox("Defecto Infraóseo", (0, "No", "Id"))
-        alcohol = st.selectbox("Alcohol", ("No consumo", "Consumo moderado", "Consumo elevado"))
-
-
-        submitted = st.form_submit_button(label="Submit", use_container_width=False)
+    with st.form("my_form"):
+        st.write("Por favor, responde las siguientes preguntas para predecir la duración de la intervención quirúrgica:")
     
-    if submitted:
-        # Store the selected options in a dictionary or any other data structure
-        survey_results = {
-            "Tipo de cirugia": cirugia,
-            "Tipo de prótesis": tipo_prot,
-            "Número de implantes": num_implante,
-            "Tipo de intervencióm quirurgica" : inter,
-            "Alcohol": alcohol,
-            "Material de regeneración": mat_regen,
-            "Caracteristicas del implante": caract_imp,
-            "Características del implante 2": caract_imp2,
-            "Implante 1 defecto tipo 1 infraóseo": de_oseo,
-            "Implante 1 defecto tipo 2 supraóseo" : def_suposeo,
+    # Campos para cada característica
+        tipo_cirugia = st.selectbox('Tipo de cirugía', options=list(mapeos['Tipo de cirugia'].values()))
+        tipo_protesis = st.selectbox('Tipo de prótesis', options=list(mapeos['Tipo de prótesis'].values()))
+        num_implantes = st.selectbox('Número de implantes', options=list(mapeos['Número de implantes'].values()))
+        tipo_intervencion = st.selectbox('Tipo de intervencióm quirúrgica', options=list(mapeos['Tipo de intervencióm quirurgica'].values()))
+        consumo_alcohol = st.selectbox('Alcohol', options=list(mapeos['Alcohol'].values()))
+        material_regeneracion = st.selectbox('Material de regeneración', options=list(mapeos['Material de regeneración'].values()))
+        caracteristicas_implante = st.selectbox('Características del implante', options=list(mapeos['Características del implante'].values()))
+        caracteristicas_implante2 = st.selectbox('Características del implante 2', options=list(mapeos['Características del implante 2'].values()))
+        defecto_infraoseo = st.selectbox('Implante 1 defecto tipo 1 infraóseo', options=list(mapeos['Implante 1 defecto tipo 1 infraóseo'].values()))
+        defecto_supraoseo = st.selectbox('Implante 1 defecto tipo 2 supraóseo', options=list(mapeos['Implante 1 defecto tipo 2 supraóseo'].values()))
+    
+    # Botón de envío del formulario
+        submitted = st.form_submit_button("Predecir")
+    
+        if submitted:
+        # Transformar las entradas en el formato correcto
+            input_data = {
+                'Tipo de cirugia': [list(mapeos['Tipo de cirugia'].keys())[list(mapeos['Tipo de cirugia'].values()).index(tipo_cirugia)]],
+                'Tipo de prótesis': [list(mapeos['Tipo de prótesis'].keys())[list(mapeos['Tipo de prótesis'].values()).index(tipo_protesis)]],
+                'Número de implantes': [list(mapeos['Número de implantes'].keys())[list(mapeos['Número de implantes'].values()).index(num_implantes)]],
+                'Tipo de intervencióm quirurgica': [list(mapeos['Tipo de intervencióm quirurgica'].keys())[list(mapeos['Tipo de intervencióm quirurgica'].values()).index(tipo_intervencion)]],
+                'Alcohol': [list(mapeos['Alcohol'].keys())[list(mapeos['Alcohol'].values()).index(consumo_alcohol)]],
+                'Material de regeneración': [list(mapeos['Material de regeneración'].keys())[list(mapeos['Material de regeneración'].values()).index(material_regeneracion)]],
+                'Características del implante': [list(mapeos['Características del implante'].keys())[list(mapeos['Características del implante'].values()).index(caracteristicas_implante)]],
+                'Características del implante 2': [list(mapeos['Características del implante 2'].keys())[list(mapeos['Características del implante 2'].values()).index(caracteristicas_implante2)]],
+                'Implante 1 defecto tipo 1 infraóseo': [list(mapeos['Implante 1 defecto tipo 1 infraóseo'].keys())[list(mapeos['Implante 1 defecto tipo 1 infraóseo'].values()).index(defecto_infraoseo)]],
+                'Implante 1 defecto tipo 2 supraóseo': [list(mapeos['Implante 1 defecto tipo 2 supraóseo'].keys())[list(mapeos['Implante 1 defecto tipo 2 supraóseo'].values()).index(defecto_supraoseo)]]
         }
-
         
+            input_df = pd.DataFrame(input_data)
 
-        st.session_state.submissions.append(survey_results)
-        #results = pd.DataFrame(survey_results)
-        results = pd.DataFrame([survey_results])
-        st.write(results)
-        
-        data = results.replace(mappings, inplace = True )
-        st.write(data)
+            st.session_state.submissions.append(input_df)
 
+            st.write(input_df)
 
-        res = modelo.predict(data)
-        res = res
-       
+            res = modelo.predict(input_df)
+            
+            c1, c2 = st.columns(2)
 
+            with c1:
+                st.write((f"El resultado es {res}"))
 
-        c1, c2 = st.columns(2)
-
-        with c1:
-            st.write((f"El resultado es {res}"))
-
-        with c2:
-            st.image("verdecirc.jpg", use_column_width="auto", output_format="PNG")
+            with c2:
+                st.image("verdecirc.jpg", use_column_width="auto", output_format="PNG")
 
 
         
