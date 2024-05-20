@@ -10,6 +10,7 @@ import plotly.express as px
 import numpy as np
 import plotly.graph_objects as go
 from datetime import datetime
+from wordcloud import WordCloud
 
 
 from ipywidgets import interact, IntRangeSlider
@@ -98,6 +99,27 @@ Este dashboard proporciona acceso inmediato a información crítica, facilitando
            template='plotly_white')
         
         st.plotly_chart(fig)
+
+
+        with c2:
+            data_w = data2['Tipo de edentulismo'].dropna()
+
+
+            text = ' '.join(data_w.astype(str))
+
+# Definir el colormap deseado
+            colormap = 'Blues'  # Cambia esto a cualquier colormap que prefieras
+
+# Generar el WordCloud
+            wordcloud = WordCloud(width=800, height=400, background_color='white', colormap=colormap).generate(text)
+
+# Mostrar el WordCloud
+            plt.figure(figsize=(10, 5))
+            plt.imshow(wordcloud, interpolation='bilinear')
+            plt.axis('off')
+            plt.title('Type of edentulism')
+            st.plotly_chart(fig)
+
         
 
 # Mostrar el nuevo DataFrame
