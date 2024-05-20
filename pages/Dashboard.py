@@ -138,23 +138,23 @@ su frecuencia y su duración. Este análisis nos ayuda a planificar y gestionar 
             )
         st.plotly_chart(fig)
 
-        data_w = data2['Tipo de edentulismo'].dropna()
+    data_w = data2['Tipo de edentulismo'].dropna()
 
 
-        text = ' '.join(data_w.astype(str))
+    text = ' '.join(data_w.astype(str))
 
 # Definir el colormap deseado
-        colormap = 'Blues'  # Cambia esto a cualquier colormap que prefieras
+    colormap = 'Blues'  # Cambia esto a cualquier colormap que prefieras
 
 # Generar el WordCloud
-        wordcloud = WordCloud(width=800, height=400, background_color='white', colormap=colormap).generate(text)
+    wordcloud = WordCloud(width=800, height=400, background_color='white', colormap=colormap).generate(text)
 
 # Mostrar el WordCloud
-        plt.figure(figsize=(10, 5))
-        plt.imshow(wordcloud, interpolation='bilinear')
-        plt.axis('off')
-        plt.title('Type of edentulism')
-        st.pyplot(plt)
+    plt.figure(figsize=(10, 5))
+    plt.imshow(wordcloud, interpolation='bilinear')
+    plt.axis('off')
+    plt.title('Type of edentulism')
+    st.pyplot(plt)
 
 
         
