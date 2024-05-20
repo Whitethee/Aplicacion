@@ -24,45 +24,45 @@ def surveyMod():
 
 
     mappings = {
-    'Tipo.de.Intervención.Quirúrgica': {'Cirugía Dentoalveolar': 0, 'Cirugía Peri-implantaria': 1, 'Implantología Bucal':2},
+    'Tipo de intervencióm quirurgica': {'Cirugía Dentoalveolar': 0, 'Cirugía Peri-implantaria': 1, 'Implantología Bucal':2},
 
-    'Tipo.de.cirugía': {0: 0, 'Cirugía combinada (regenerativa + implantoplastia)': 1, 'Cirugía resectiva': 4, 'Cirugía de acceso': 2, 'Cirugía regenerativa': 3},
+    'Tipo de cirugía': {0: 0, 'Cirugía combinada (regenerativa + implantoplastia)': 1, 'Cirugía resectiva': 4, 'Cirugía regenerativa': 3},
 
-    'X.Qué.material.de.regeneración.ha.sido.utilizado.': {'Xenoinjerto (Bio-Oss) + Membrana de colágeno reabsorbible (Bio-Gide)': 1,'0': 0},
-
-
-    'Tipo.de.prótesis.sobre.implantes': {'Corona unitaria': 1, '0':0, 'Prótesis híbrida':2, 'Sobredentadura':4, 'Puente sobre implantes':3},
-
-    'Implante.1...Defecto.tipo.I..infraóseo..2': {'0': 0, 'No':3, 'Ic':1, 'Id':2},
-
-    'Alcohol': {'No consumo': 0, 'Consumo moderado':1, 'Consumo elevado':2},
+    'Material de regeneración': {'Xenoinjerto (Bio-Oss) + Membrana de colágeno reabsorbible (Bio-Gide)': 1,'0': 0},
 
 
-    'Caracteristicas.del.implante' : {0:0, 12:1, 21:3, 36:5, 23:4, 45:6, 16.0:2 },
+    'Tipo de prótesis': {'0':0, 'Prótesis híbrida':2, 'Sobredentadura':4, 'Puente sobre implantes':3},
 
-    'Implante.1...Defecto.tipo.II..supraóseo.' : {0:0,  "Sí" : 2, "No": 1},
+    'Implante 1 defecto tipo 1 infraóseo': {'0': 0, 'No':3, 'Id':1},
 
-    'Número.de.implantes' : {0:0, 3:4, 2:3, 1:1, 6:6, 4:5},
+    'Alcohol': {'No consumo': 2, 'Consumo moderado':1, 'Consumo elevado':0},
+
+
+    'Caracteristicas del implante' : {0:0, 12:1, '16.0': 3},
+
+    'Implante 1 defecto tipo 2 supraóseo.' : {0:0,  "Sí" : 2, "No": 1},
+
+    'Número de implantes' : {0:0, 2:4, 1:1, 6:6, '1.0' : 6},
     
-    'Características.del.implante.2' :  {0: 0, 12: 1, 32:5, 34:6, 36:7, 22:3, 21:2, 26:4, 42:8}
+    'Características del implante 2' :  {0:0, 34:1, 42:7}
 
     }
 
 
 
 
-    modelo = load('data/modelo_entrenado_DEF.joblib')
+    modelo = load('data/modelo_entrenado_DEFi.joblib')
 
     with st.form("Model-Survey"):
         inter = st.selectbox("Tipo de Intervencion Quirúrgica", ("Cirugía Dentoalveolar", "Cirugía Peri-implantaria", "Implantología Bucal"))
         cirugia = st.selectbox("Tipo de Cirugia", (0, "Cirugía combinada (regenerativa + implantoplastia)", "Cirugía de acceso", "Cirugía resectiva", "Cirugía regenerativa"))
         mat_regen = st.selectbox("Material de Regeneracion", ("0", "Xenoinjerto (Bio-Oss) + Membrana de colágeno reabsorbible (Bio-Gide)"))
-        num_implante = st.selectbox("Número de implantes",  (1, 2, 3, 4, 5, 6))
+        num_implante = st.selectbox("Número de implantes",  (0, 1, 2, '1.0'))
         tipo_prot = st.selectbox("Tipo de Protesis", (0, "Corona unitaria", "Puente sobre implantes", "Prótesis híbrida", "Sobredentadura", "Full-arch metal-cerámica"))
-        caract_imp = st.selectbox("Características del implante", (0, 12, 21, 36, 23, 4, 16.0))
+        caract_imp = st.selectbox("Características del implante", (0, 12, '16.0'))
         def_suposeo = st.selectbox("Defecto Supraoseo Implante 1", (0, "Sí", "No"))
-        caract_imp2 = st.selectbox("Caracteristicas del implante 2", (0, 12, 21, 22, 26, 32, 34, 36, 42))
-        de_oseo = st.selectbox("Defecto Infraóseo", (0, "No", "Ib", "Ic"))
+        caract_imp2 = st.selectbox("Caracteristicas del implante 2", (0, 34, 42))
+        de_oseo = st.selectbox("Defecto Infraóseo", (0, "No", "Ib"))
         alcohol = st.selectbox("Alcohol", ("No consumo", "Consumo moderado", "Consumo elevado"))
 
 
@@ -71,16 +71,16 @@ def surveyMod():
     if submitted:
         # Store the selected options in a dictionary or any other data structure
         survey_results = {
-            "Tipo.de.cirugía": cirugia,
-            "Tipo.de.prótesis.sobre.implantes": tipo_prot,
-            "Número.de.implantes": num_implante,
-            "Tipo.de.Intervención.Quirúrgica" : inter,
+            "Tipo de cirugia": cirugia,
+            "Tipo de prótesis": tipo_prot,
+            "Número de implantes": num_implante,
+            "Tipo de intervencióm quirurgica" : inter,
             "Alcohol": alcohol,
-            "X.Qué.material.de.regeneración.ha.sido.utilizado.": mat_regen,
-            "Caracteristicas.del.implante": caract_imp,
-            "Características.del.implante.2": caract_imp2,
-            "Implante.1...Defecto.tipo.I..infraóseo..2": de_oseo,
-            "Implante.1...Defecto.tipo.II..supraóseo." : def_suposeo,
+            "Material de regeneración": mat_regen,
+            "Caracteristicas del implante": caract_imp,
+            "Características del implante 2": caract_imp2,
+            "Implante 1 defecto tipo 1 infraóseo": de_oseo,
+            "Implante 1 defecto tipo 2 supraóseo." : def_suposeo,
         }
 
         
