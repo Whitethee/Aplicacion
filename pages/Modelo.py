@@ -94,8 +94,6 @@ def surveyMod():
         st.write(data)
 
 
-        data = results.replace(mappings, inplace=True)
-        st.write(data)
         res = modelo.predict(data)
         res = res
        
