@@ -122,6 +122,8 @@ def surveyMod():
             st.write(input_df)
 
             res = modelo.predict(input_df)
+
+            res = res[0]
             
             c1, c2 = st.columns(2)
 
