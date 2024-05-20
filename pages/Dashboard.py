@@ -120,6 +120,44 @@ Este dashboard proporciona acceso inmediato a información crítica, facilitando
             plt.title('Type of edentulism')
             st.pyplot(plt)
 
+
+        with c3:
+            data_l = data2['Localización'].dropna()
+
+
+            unique, counts = np.unique(data_l[~pd.isnull(data_l)], return_counts=True)
+
+
+            colors = ['#2155BF', '#71CEF2']  # Azul oscuro y Azul claro
+
+# Crear el gráfico de dona
+            fig = go.Figure(data2=[go.Pie(
+                labels=list(data_dict.keys()),
+                values=list(data_dict.values()),
+                hole=.4,  # Tamaño del agujero central, haciendo que parezca una dona
+                marker_colors=colors,  # Colores de las secciones
+                hoverinfo='label+percent',  # Mostrar etiquetas y porcentajes al pasar el mouse
+                textinfo='label+value+percent'  # Mostrar información en el gráfico
+                )])
+
+# Añadir título
+            fig.update_layout(
+                title={
+                'text': "Location Distribution",
+                'y':0.9,
+                'x':0.5,
+                'xanchor': 'center',
+                'yanchor': 'top'},
+                template='plotly_white',  # Usar un fondo blanco para más claridad
+                font=dict(
+                family="Arial, sans-serif",
+                size=12,
+                color="black"
+                           )
+            )
+            st.plotly_chart(fig)
+
+
         
 
 # Mostrar el nuevo DataFrame
