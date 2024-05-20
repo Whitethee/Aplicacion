@@ -7,7 +7,8 @@ from pages.Clasificador import clasificador
 
 st.set_page_config(
     page_title="Software de Predicción Quirúrgica",
-    page_icon="👋"
+    page_icon="👋",
+    layout = "wide"
 )
 st.title("Plataforma de Gestión Clínica")
 st.write("________________________________________________")
