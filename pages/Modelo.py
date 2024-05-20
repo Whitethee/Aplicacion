@@ -146,7 +146,7 @@ def surveyMod():
                 st.markdown(f'<p class="small-font">La duración estimada de la intervención sera de:  </p><p class="big-font">{res} min</p>', unsafe_allow_html=True)
 
             with c2:
-                st.image("verdecirc.jpg", use_column_width="auto", output_format="PNG")
+                st.write("")
 
 
         
