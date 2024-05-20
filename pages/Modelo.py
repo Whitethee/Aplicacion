@@ -127,7 +127,7 @@ def surveyMod():
 
             res = modelo.predict(input_df)
 
-            res = res[0]
+            res = int(res[0])
             
             c1, c2 = st.columns(2)
 
