@@ -131,7 +131,7 @@ Este dashboard proporciona acceso inmediato a información crítica, facilitando
             colors = ['#2155BF', '#71CEF2']  # Azul oscuro y Azul claro
 
 # Crear el gráfico de dona
-            fig = go.Figure(data2=[go.Pie(
+            fig = go.Figure(data_l=[go.Pie(
                 labels=unique,
                 values=counts,
                 hole=.4,  # Tamaño del agujero central, haciendo que parezca una dona
