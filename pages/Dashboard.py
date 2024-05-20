@@ -22,15 +22,13 @@ def dashboard():
     data = pd.read_csv("data/data_APP.csv")
     st.title('Estadísticas de Intervenciones')
     st.markdown("""
-# Bienvenido/a al dashboard de nuestra aplicación web
 
-Esta herramienta está diseñada para optimizar el manejo de cirugías bucodentales y se organiza en tres secciones clave:
+Explora los datos sobre las intervenciones quirúrgicas realizadas en la clínica. Aquí encontrarás información detallada sobre los tipos de operaciones,
+su frecuencia y su duración. Este análisis nos ayuda a planificar y gestionar mejor los recursos.
 
-1. **Intervenciones Quirúrgicas**: Detalles completos sobre los procedimientos realizados, equipos involucrados y resultados.
-2. **Pacientes**: Información detallada de cada paciente, incluyendo historial médico y diagnósticos.
-3. **Medicación**: Gestión de las medicaciones prescritas, dosificaciones y horarios de administración.
-
-Este dashboard proporciona acceso inmediato a información crítica, facilitando decisiones informadas y mejorando la calidad del cuidado al paciente.
+1. **información de Pacientes**: Consulta la información detallada sobre nuestros pacientes.
+                Esta aapartado incluye datos demográficos, historial médico y tratamientos realizados.
+                Con estos datos, podemos personalizar la atención y mejorar la experiencia de cada paciente.
 """)
     st.write("____________________________________________________")
    
