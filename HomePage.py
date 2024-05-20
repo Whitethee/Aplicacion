@@ -7,9 +7,11 @@ from pages.Clasificador import clasificador
 
 st.set_page_config(
     page_title="Software de Predicción Quirúrgica",
-    page_icon="👋",
+    page_icon="🏠",
     layout = "wide"
 )
+
+titles()
 st.title("Plataforma de Gestión Clínica")
 st.write("________________________________________________")
 st.write("Bienvenido a nuestra plataforma de gestión y agendado de pacientes. Nuestro objetivo es optimizar el uso de nuestras camillas y permitir que más estudiantes puedan recibir la formación práctica que necesitan.")
