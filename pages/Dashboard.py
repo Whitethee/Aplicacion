@@ -125,13 +125,15 @@ su frecuencia y su duración. Este análisis nos ayuda a planificar y gestionar 
 
             unique, counts = np.unique(data_l[~pd.isnull(data_l)], return_counts=True)
 
+            data_dict = dict(zip(unique, counts))
+
 
             colors = ['#2155BF', '#71CEF2']  # Azul oscuro y Azul claro
 
 # Crear el gráfico de dona
             fig = go.Figure(data2=[go.Pie(
-                labels=unique.keys(),
-                values=counts.values(),
+                labels=list(data_dict.keys()),
+                values=list(data_dict.values()),
                 hole=.4,  # Tamaño del agujero central, haciendo que parezca una dona
                 marker_colors=colors,  # Colores de las secciones
                 hoverinfo='label+percent',  # Mostrar etiquetas y porcentajes al pasar el mouse
