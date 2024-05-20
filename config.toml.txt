@@ -1,6 +1,5 @@
 [pages]
 [[pages]]
-
 title = "Home"
 path = "HomePage.py"
 
