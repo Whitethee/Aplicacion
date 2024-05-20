@@ -49,7 +49,7 @@ Este dashboard proporciona acceso inmediato a información crítica, facilitando
 
     c1, c2, c3 = st.columns(3)
 
-    with c1;
+    with c1:
         categories = data2['Género'].dropna()
         durations = data2['Duración de la intervención quirúrgica'].dropna()
 
