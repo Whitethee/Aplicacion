@@ -49,6 +49,7 @@ su frecuencia y su duración. Este análisis nos ayuda a planificar y gestionar 
     c1, c2 = st.columns(2)
 
     with c1:
+        st.subheader("Tipo de Dentulismo")
         data_w = data2['Tipo de edentulismo'].dropna()
 
 
