@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 from collections import Counter
 import plotly.express as px
 import numpy as np
+import plotly.graph_objects as go
 from datetime import datetime
 
 
@@ -35,6 +36,72 @@ Este dashboard proporciona acceso inmediato a información crítica, facilitando
 
     st.dataframe(data)
 
+    data2 = pd.read_csv("data/General_data.csv")
+    data2 = data2[~data2.applymap(lambda x: x == 'Response').any(axis=1)]
+    data2 = data2[~data2.applymap(lambda x: x == '3+').any(axis=1)]
+
+    data2.head() 
+    columnas_seleccionadas = ['Fecha Intervención', 'Fecha de Nacimiento','Género','Exfumador/a','Fumador/a',
+                          'Patología Sistémica','Localización','Tipo de edentulismo','Duración de la intervención quirúrgica']
+
+# Crear un nuevo DataFrame con las columnas seleccionadas
+    data2 = data2[columnas_seleccionadas]
+
+    c1, c2, c3 = st.columns(3)
+
+    with c1;
+        categories = data2['Género'].dropna()
+        durations = data2['Duración de la intervención quirúrgica'].dropna()
+
+# Crear un DataFrame
+        data_G = pd.DataFrame({
+            'Género': categories,
+            'Duración': durations
+        })
+
+# Eliminar filas con categorías o valores NaN
+        data_G.dropna(inplace=True)
+
+# Preparar datos para el gráfico de barras apiladas
+        stacked_data = data_G.groupby(['Género', 'Duración']).size().unstack(fill_value=0)
+
+# Definir colores personalizados para cada rango de duración
+        colors = {
+    '0-5 minutos': '#020659',
+    '5-10 minutos': '#2155BF',
+    '10-20 minutos': '#71CEF2',
+    '20-40 minutos': '#58A8D9',
+    '40-60 minutos': '#4393D9',
+    '60-90 minutos': '#020659',
+    '90-120 minutos': '#2155BF',
+    '120-180 minutos': '#71CEF2',
+    '>180 minutos': '#58A8D9'
+}
+
+# Crear el gráfico de barras apiladas
+        fig = go.Figure()
+
+        for duration in stacked_data.columns:
+            fig.add_trace(go.Bar(
+            x=stacked_data.index,
+            y=stacked_data[duration],
+            name=duration,
+            marker_color=colors[duration]  # Usar colores personalizados
+            ))
+
+# Añadir características del gráfico
+        fig.update_layout(
+           barmode='stack',
+           title='Distribution of Intervention Duration by Gender',
+           xaxis_title='Gender',
+           yaxis_title='Count of Intervention',
+           template='plotly_white')
+        
+        st.plotly_chart(fig, use_container_width=True)
+        
+
+# Mostrar el nuevo DataFrame
+   
 
 
      
